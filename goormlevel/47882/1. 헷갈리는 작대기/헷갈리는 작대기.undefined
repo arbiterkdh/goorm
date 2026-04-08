@@ -1,0 +1,23 @@
+// Run by Node.js
+
+const readline = require("readline");
+const rl = readline.createInterface({
+	input: process.stdin,
+	output: process.stdout
+});
+
+rl.on("line", (line) => {
+	let cnt1 = 0, cnt2 = 0, cnt3 = 0, cnt4 = 0;
+	for (let i = 0; i < line.length; i++) {
+		switch (line.charCodeAt(i)) {
+			case 49: cnt1++; break;
+			case 73: cnt2++; break;
+			case 108: cnt3++; break;
+			case 124: cnt4++; break;
+		}
+	}
+	console.log(`${cnt1}\n${cnt2}\n${cnt3}\n${cnt4}`);
+	rl.close();
+}).on("close", () => {
+	process.exit();
+});
