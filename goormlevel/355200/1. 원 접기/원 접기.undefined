@@ -1,0 +1,20 @@
+import java.io.*;
+import java.util.StringTokenizer;
+class Main {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		int AM = Integer.parseInt(st.nextToken());
+		int CM = Integer.parseInt(st.nextToken());
+		int BM = Integer.parseInt(st.nextToken());
+		int a = AM * BM;
+		int b = CM;
+		int GCD = gcd(a, b);
+		System.out.println((a / GCD) + " " + (b / GCD));
+	}
+
+	static int gcd(int a, int b) {
+		if (a % b == 0) return b;
+		return gcd(b, a % b);
+	}
+}
