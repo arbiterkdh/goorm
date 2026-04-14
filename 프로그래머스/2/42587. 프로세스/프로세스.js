@@ -17,7 +17,7 @@ function solution(priorities, location) {
             if (i === location) return answer;
             if (priorityMap.get(p) === 0) {
                 p--;
-                while (!priorityMap.has(p)) p--;
+                while (p > 0 && !priorityMap.has(p)) p--;
             }
         }
     }
